@@ -1,3 +1,5 @@
+/* Default light theme styles (already provided) */
+
 body {
     background: #ffffff;
     font-family: 'Georgia', serif;
@@ -58,7 +60,6 @@ body {
     margin-top: 10px;
     font-size: 16px;
     line-height: 1.6;
-   
     padding-left: 135px;
 }
 
@@ -75,4 +76,32 @@ body {
 .logo img {
     height: auto; /* Maintain the aspect ratio */
     width: 115px; /* Set a fixed width */
+}
+
+/* Dark theme styles */
+body.dark {
+    background: #333333; /* Dark background */
+    color: white; /* Light text color */
+}
+
+body.dark .subtitle {
+    color: #a5c4f7; /* Lighter blue for better contrast */
+}
+
+body.dark .divider {
+    background-color: #555555; /* Darker divider */
+}
+
+body.dark .intro, 
+body.dark .italic, 
+body.dark .mission-points {
+    color: white; /* Ensure text is white in dark mode */
+}
+
+body.dark .mission-points li {
+    color: white; /* Ensure list items are white */
+}
+
+body.dark .logo img {
+    content: url('byui-logo_white.webp'); /* Change logo to white version for dark theme */
 }

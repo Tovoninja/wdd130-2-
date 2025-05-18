@@ -1,54 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cool Pics 📷</title>
-    <link rel="stylesheet" href="coolpics.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Image Gallery</title>
+<style>
+  /* Global Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Body font */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px; /* space for footer */
+  }
+
+  /* Header */
+  header {
+    background-color: #8c60c5;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  header .title {
+    margin-bottom: 10px;
+  }
+
+  /* Menu button */
+  .menu-button {
+    display: block;
+    margin: 0 auto 20px;
+    background-color: #ffffff;
+    color: #8c60c5;
+    border: 2px solid #8c60c5;
+    padding: 10px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  }
+  .menu-button:hover {
+    background-color: #8c60c5;
+    color: #ffffff;
+    transform: translateY(2px);
+  }
+
+  /* Navigation */
+  nav {
+    background-color: #8c60c5;
+    display: grid;
+    grid-template-columns: 1fr 0fr 1fr 0fr 1fr 0fr 1fr 0fr 1fr;
+    padding: 0 5%;
+  }
+  nav ul {
+    list-style: none;
+    display: contents;
+  }
+  nav li {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+
+  /* Responsive nav */
+  @media (max-width: 1000px) {
+    nav ul {
+      display: none;
+    }
+    nav ul.show {
+      display: contents;
+    }
+  }
+
+  /* Main content */
+  main {
+    text-align: center;
+    padding: 20px;
+  }
+  .show {
+    margin-bottom: 30px;
+  }
+  .images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+  }
+  .images img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+  .images img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Footer */
+  footer {
+    background-color: #8c60c5;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  /* Modal overlay */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    transition: opacity 0.3s ease;
+  }
+  .modal.showing {
+    display: block;
+    opacity: 1;
+  }
+
+  /* Modal image */
+  .modal-image {
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    margin: 10vh auto;
+    border-radius: 8px;
+    box-shadow: 0 0 15px white;
+    object-fit: contain;
+    outline: none;
+    filter: none;
+  }
+
+  /* Close button */
+  .modal .close {
+    position: fixed;
+    top: 15vh;
+    right: 5%;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    user-select: none;
+    z-index: 1001;
+  }
+  .modal .close:hover {
+    color: #ccc;
+  }
+</style>
 </head>
 <body>
-    <header>
-        <div class="title"> 
-            <h1>Cool Pics 📷</h1>
-        </div>
-        <div class="menu">
-            <h2>Menu</h2>
-        </div>
-    </header>
 
-    <nav>
-        <ul>
-            <li>Home</li>
-            <li>People</li>
-            <li>Places</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
-    </nav>
+<header>
+  <h1 class="title">My Image Gallery</h1>
+  <button class="menu-button" aria-expanded="false" aria-controls="nav-list">Menu</button>
+  <nav>
+    <ul id="nav-list">
+      <li>Home</li>
+      <li></li>
+      <li>People</li>
+      <li></li>
+      <li>Places</li>
+      <li></li>
+      <li>About</li>
+      <li></li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+</header>
 
-    <main>
-        <div class="show">
-            <h3>Current Work</h3>
-        </div>
+<main>
+  <div class="images">
+    <img src="https://picsum.photos/id/1015/400/400" alt="Image 1" />
+    <img src="https://picsum.photos/id/1016/400/400" alt="Image 2" />
+    <img src="https://picsum.photos/id/1025/400/400" alt="Image 3" />
+    <img src="https://picsum.photos/id/1035/400/400" alt="Image 4" />
+  </div>
+</main>
 
-        <!-- Add images below the "Current Work" section -->
-        <div class="images">
-            <img src="norris-full.jpeg" alt="Image 1">
-            <img src="norris-sm.jpeg" alt="Image 2">
-            <img src="norris-full.jpeg" alt="Image 1">
-            <img src="norris-sm.jpeg" alt="Image 2">
-            <img src="norris-full.jpeg" alt="Image 1">
-            <img src="norris-sm.jpeg" alt="Image 2">
-            <img src="norris-full.jpeg" alt="Image 1">
-            <img src="norris-sm.jpeg" alt="Image 2">
-            <img src="norris-full.jpeg" alt="Image 1">
-            <img src="norris-sm.jpeg" alt="Image 2">
+<footer>
+  &copy; 2025 My Gallery
+</footer>
 
-        </div>
-    </main>
+<!-- Modal -->
+<div id="modal" class="modal" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="modalImage">
+  <button class="close" aria-label="Close modal">&times;</button>
+  <img src="" alt="" class="modal-image" id="modalImage" />
+</div>
 
-    <footer>
-        <p>©2025 Not a real site</p>
-    </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Menu toggle
+    const btn = document.querySelector('.menu-button');
+    const nav = document.querySelector('nav ul');
+    btn.addEventListener('click', () => nav.classList.toggle('show'));
+
+    // Modal image viewer
+    const modal = document.getElementById('modal');
+    const modalImg = document.querySelector('.modal-image');
+    const closeBtn = modal.querySelector('.close');
+
+    // Show modal with clicked image
+    document.querySelectorAll('.images img').forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      });
+    });
+
+    // Close modal when X is clicked
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    // Close modal with ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        modal.style.display = 'none';
+      }
+    });
+  });
+</script>
+
 </body>
 </html>

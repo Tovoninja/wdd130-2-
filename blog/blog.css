@@ -1,0 +1,115 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(233, 211, 183);
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 2px solid #444;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #aaa;
+}
+
+.nav-btn,
+nav a {
+  border: 1px solid #444;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-btn.active {
+  font-weight: bold;
+}
+
+/* Layout */
+main {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 1px solid #aaa;
+}
+
+.sidebar button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Content Section */
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Book Section */
+.book h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Center title above image */
+.center-anchor {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center heading over image */
+}
+
+/* Image and Meta Info */
+.book-info {
+  display: flex;
+  gap: 80px;
+  
+  align-items: flex-start;
+  justify-content: center;
+  
+}
+
+.book-image img {
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  object-fit: cover;  /* Cover keeps aspect ratio, cropping if needed */
+  display: block;     /* Remove default inline spacing */
+  border-radius: 0;   /* Optional: match container corners */
+}
+
+
+.book-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+  justify-content: center;
+}
+
+/* Description */
+.description {
+  margin-top: 20px;
+  max-width: 500px;
+  line-height: 1.5;
+}

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Kids Read for Fun</title>
-  <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="blog.css" />
 </head>
 <body>
   <header>
-    <h1>Kids Read for Fun</h1>
+    <div class="main-title"><h1>Kids Read for Fun</h1></div>
+
     <nav>
       <button class="nav-btn active">Search</button>
       <a href="#">About</a>
@@ -24,33 +25,15 @@
     </aside>
 
     <section class="content">
-  <div class="book">
-
-    <div class="book-info">
-      <div class="center-anchor">
-        <h2><strong>Book Three: The Horse and His Boy</strong></h2>
-        <div class="book-image">
-          <img src="boyAndHorse.jpg" alt="Boy and Horse" />
-        </div>
-      </div>
-
-      <div class="book-meta">
-        <p><strong>July 5, 2022</strong></p>
-        <p>10–14</p>
-        <p>Fantasy</p>
-        <p>★★★★★</p>
-      </div>
-    </div>
-
-    <p class="description">
-      A loyal boy and his gentle horse share a special bond, exploring the world of Narnia together with trust and friendship.
-    </p>
-  </div>
-</section>
-
-
-
-
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search books..."
+        style="width: 100%; padding: 8px; margin-bottom: 20px; font-size: 16px;"
+      />
+      <!-- Books will be dynamically inserted here -->
+    </section>
   </main>
+  <script src="blog.js"></script>
 </body>
 </html>

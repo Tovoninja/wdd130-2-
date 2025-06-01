@@ -13,6 +13,13 @@ header {
   border-bottom: 2px solid #444;
 }
 
+.main-title {
+  color: darkred;
+  font-size: 2.5rem;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+}
+
 nav {
   display: flex;
   justify-content: center;
@@ -38,6 +45,8 @@ nav a {
 /* Layout */
 main {
   display: flex;
+  justify-content: center; /* Center the main container itself */
+  padding: 20px;
 }
 
 /* Sidebar */
@@ -61,50 +70,85 @@ main {
 
 /* Content Section */
 .content {
-  flex: 1;
-  padding: 20px;
+  max-width: 700px;    /* Controls the width of the book list */
+  margin: 0 auto;      /* Center the .content block itself */
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-/* Book Section */
-.book h2 {
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 10px;
+/* Search Input */
+#searchInput {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
-/* Center title above image */
+/* Each book: centered by fixed width and auto margins */
+.book {
+  width: 100%;
+  max-width: 600px;      /* All books share the same max width */
+  margin: 0 auto 40px auto; /* Auto left/right margins center it */
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+/* Book Info container: flex, but top-align title and date */
+.book-info {
+  display: flex;
+  gap: 40px;             /* Space between image+title and meta */
+  align-items: flex-start; /* Align top edge so date lines up with title */
+  justify-content: center; /* Center the left/right blocks horizontally */
+}
+
+/* Center the title and image vertically stacked */
 .center-anchor {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center heading over image */
+  align-items: center;   /* Center title and image horizontally */
+  min-width: 320px;      /* Keep a consistent width */
 }
 
-/* Image and Meta Info */
-.book-info {
-  display: flex;
-  gap: 80px;
-  
-  align-items: flex-start;
-  justify-content: center;
-  
+/* Book Title */
+.center-anchor h2 {
+  margin: 0 0 10px 0;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
 }
 
+/* Book image styling */
 .book-image img {
-  width: 100%;
-  max-width: 300px;
-  height: 100%;
-  object-fit: cover;  /* Cover keeps aspect ratio, cropping if needed */
-  display: block;     /* Remove default inline spacing */
-  border-radius: 0;   /* Optional: match container corners */
+  max-width: 300px;      /* Bigger image */
+  height: auto;
+  display: block;
+  border-radius: 5px;
 }
 
-
+/* Book meta info aligned vertically, right aligned */
 .book-meta {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   font-size: 18px;
   justify-content: center;
+  text-align: right;
+  min-width: 140px;      /* Keep meta column a consistent width */
+  color: #333;
+}
+
+/* Emphasize date */
+.book-meta p:first-child {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+}
+
+/* Other meta paragraphs */
+.book-meta p {
+  margin: 0;
 }
 
 /* Description */
@@ -112,4 +156,5 @@ main {
   margin-top: 20px;
   max-width: 500px;
   line-height: 1.5;
+  text-align: center;
 }

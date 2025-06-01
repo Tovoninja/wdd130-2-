@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kids Read for Fun</title>
+  <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+  <header>
+    <div class="main-title"><h1>Kids Read for Fun</h1></div>
+
+    <nav>
+      <button class="nav-btn active">Search</button>
+      <a href="#">About</a>
+      <a href="#">Archive</a>
+    </nav>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+      <button>Sort:</button>
+      <button>Age:</button>
+      <button>Genre</button>
+      <button>Rating</button>
+    </aside>
+
+    <section class="content">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search books..."
+        style="width: 100%; padding: 8px; margin-bottom: 20px; font-size: 16px;"
+      />
+      <!-- Books will be dynamically inserted here -->
+    </section>
+  </main>
+  <script src="blog.js"></script>
+</body>
+</html>

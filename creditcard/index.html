@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Credit Card Form - Grid</title>
+  <link rel="stylesheet" href="creditcard.css" />
+  <link rel="icon" href="6963703.png" type="image/png">
+
+</head>
+<body>
+
+  <form class="card-form">
+    <!-- Card Front -->
+    <div class="card front">
+      <p class="total">TOTAL: $199</p>
+      <div class="chip"></div>
+
+      <label>CARD NUMBER</label>
+      <input type="text" placeholder="1234 5678 9101 1020" />
+
+      <div class="grid-row">
+        <div class="grid-item">
+          <label>CARD HOLDER</label>
+          <input type="text" placeholder="Luke Woodland" />
+        </div>
+        <div class="grid-item">
+          <label>EXPIRATION</label>
+          <div class="expiry">
+            <input type="text" placeholder="MM" />
+            <input type="text" placeholder="YY" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Back -->
+    <div class="card back">
+      <div class="stripe"></div>
+      <label>CVC/CVV</label>
+      <input type="text" placeholder="xxx" />
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>

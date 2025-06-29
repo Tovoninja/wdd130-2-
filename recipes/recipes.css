@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+
+:root {
+  --primary-color: #1b98e0;
+  --text-color: #333;
+  --font-header: 'Amatic SC', cursive;
+  --font-body: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-color);
+  background-color: #fff;
+  padding: 1em;
+}
+
+/* ✅ Header: LEFT aligned logo + RecipeBook */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1em;
+  margin-bottom: 1.5em;
+}
+
+header img {
+  height: 100px;
+  width: auto;
+}
+
+header h1 {
+  font-family: var(--font-header);
+  font-size: 3rem;
+  color: var(--text-color);
+}
+
+/* ✅ Search bar with rounded corners */
+.search-form {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border-radius: 10px;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 0.5em;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.search-form button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-form button img {
+  height: 20px;
+  width: 20px;
+}
+
+/* ✅ Divider line below search bar */
+.divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+}
+
+/* ✅ Recipe container */
+#recipe-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+/* ✅ Card layout */
+.recipe-card {
+  display: flex;
+  gap: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1em;
+  align-items: flex-start;
+}
+
+/* ✅ Image: BIG, NOT ROUNDED */
+.recipe-card img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* ✅ Content formatting */
+.recipe-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.recipe-card .tag {
+  background-color: #eee;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  width: fit-content;
+}
+
+.recipe-card h2 {
+  font-family: var(--font-header);
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.recipe-card .stars {
+  font-size: 1.1rem;
+  color: goldenrod;
+}
+
+.recipe-card p {
+  font-size: 1rem;
+}
+
+/* ✅ Footer fixed to bottom */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1em;
+  border-top: none;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+footer .social {
+  display: flex;
+  gap: 1em;
+}
+
+footer .social img {
+  width: 60px;
+  height: 60px;
+}
+
+/* ✅ Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

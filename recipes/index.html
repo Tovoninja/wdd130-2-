@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Book</title>
+  <link rel="stylesheet" href="recipes.css" />
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <header>
+    <img src="recipe-book.png" alt="Recipe Book Logo" />
+    <h1>RecipeBook</h1>
+  </header>
+
+  <form class="search-form" onsubmit="return false;">
+    <label for="search" class="sr-only">Search Recipes</label>
+    <input type="text" id="search" placeholder="Find a recipe" />
+    <button type="submit">
+      <img src="search.svg" alt="Search" />
+    </button>
+  </form>
+
+  <hr class="divider" />
+
+
+  <main id="recipe-container">
+    <!-- Recipe card inserted here by JS -->
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">
+        Recipe icons created by Freepik - Flaticon
+      </a>
+    </p>
+    <div class="social">
+      <a href="#"><img src="instagram_icon.svg" alt="instagram icon" /></a>
+      <a href="#"><img src="youtube_icon.svg" alt="youtube icon" /></a>
+      <a href="#"><img src="pinterest_icon.svg" alt="pinterest icon" /></a>
+    </div>
+  </footer>
+</body>
+</html>
